@@ -16,7 +16,7 @@
 		crossorigin="anonymous">
 		
 	<style>
-		.add-box {
+		.edit-box {
 			margin-top: 100px;
 		}
 	</style>
@@ -26,29 +26,27 @@
 <body>
 	<div class="container">
 
-		<div class="add-box">
+		<div class="edit-box">
 			<!-- 글 내용 -->
 			<div class="card">
 				<div class="card-body">
-					<form name="addForm" method="post" action="/board/add">
+					<form name="editForm" method="post" action="/javaStudy/edit">
 						<div class="form-group">
-							<label>Name(글쓴이)</label> 
-							<input type="text" class="form-control" value="이름을 넣어주세요">
+							<label>Name(글쓴이)</label> <input type="text" class="form-control" value="소은영">
 						</div>
 						<div class="form-group">
-							<label>Title(제목)</label> 
-							<input type="text" class="form-control" value="제목을 넣어주세요">
+							<label>Title(제목)</label> <input type="text" class="form-control" value="웹표준 스따디">
 						</div>
 						<div class="form-group">
-							<label>Text(내용)</label> 
-							<textarea class="form-control" rows="10">게시하고 싶은 내용을 적어주세요^^</textarea>
+							<label>Text(내용)</label>
+							<textarea class="form-control" rows="10">뭐임? 엔터가 안 되네.....</textarea>
 						</div>
 					</form>
 				</div>
 				<div class="card-footer">
 					<a href="/javaStudy/list.jsp" class="btn btn-primary">back(목록)</a>
 					<div class="float-right">
-						<button type="button" class="btn btn-success" id="btnAdd">등록</button>
+						<button type="button" class="btn btn-success" id="btnEdit">수정</button>
 					</div>
 				</div>
 			</div>
@@ -71,8 +69,8 @@
 		crossorigin="anonymous"></script>
 		
 	<script>
- 		$('#btnAdd').on('click', function() {
-			$('form[name=addForm]').submit();
+ 		$('#btnEdit').on('click', function() {
+			$('form[name=editForm]').submit();
 		});
 	</script>
 </body>

@@ -62,7 +62,7 @@
 			%>
 							<tr>
 								<td><%=i %></td>
-								<td><a href="/board/view.jsp"><%=randomTitle %></a></td>
+								<td><a href="/javaStudy/view.jsp"><%=randomTitle %></a></td>
 								<td><%=randomName %></td>
 								<td><%=today %></td>
 							</tr>

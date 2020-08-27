@@ -40,9 +40,9 @@
 					</p>
 				</div>
 				<div class="card-footer">
-					<a href="/board/list.jsp" class="btn btn-primary">목록</a>
+					<a href="/javaStudy/list.jsp" class="btn btn-primary">목록</a>
 					<div class="float-right">
-						<a href="/board/edit.jsp" class="btn btn-warning">수정</a>
+						<a href="/javaStudy/edit.jsp" class="btn btn-warning">수정</a>
 						<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">삭제</button>
 					</div>
 				</div>
@@ -93,7 +93,7 @@
 		</div>
 	</div>
 
-	<form id="deleteForm" method="post" action="/board/delete">
+	<form id="deleteForm" method="post" action="/javaStudy/delete">
 		<input type="hidden" name="board_id">
 	</form>
 	
