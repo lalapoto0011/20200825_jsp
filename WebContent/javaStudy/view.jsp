@@ -29,19 +29,21 @@
 		<div class="view-box">
 			<!-- 글 내용 -->
 			<div class="card">
-				<div class="card-header">글 제목입니다.</div>
+				<div class="card-header">비전공자즈 스터디</div>
 				<div class="card-body">
-					<h5 class="card-title">홍길동 2020.08.27 13:10:15</h5>
+					<h5 class="card-title">소은영 2020.08.27 13:10:15</h5>
 					<p class="card-text">
-						글 내용 출력란입니다.<br> 안녕하세요?<br> 글이 출력됩니다.<br> 광광
+						오늘 정말이지 힘든 하루였네요 ㅎㅎ<br> 
+						너무 졸리고 머리 아프다.<br>
+						그렇지만 자소서, 책읽기, 일본어 공부를 해야해요. 대박 ㅋ<br>
+						오늘 술 마셨으면 큰일났을뻔...
 					</p>
 				</div>
 				<div class="card-footer">
 					<a href="/board/list.jsp" class="btn btn-primary">목록</a>
 					<div class="float-right">
 						<a href="/board/edit.jsp" class="btn btn-warning">수정</a>
-						<button type="button" class="btn btn-danger" data-toggle="modal"
-							data-target="#deleteModal">삭제</button>
+						<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">삭제</button>
 					</div>
 				</div>
 			</div>
@@ -84,13 +86,13 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">취소</button>
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">삭제</button>
+						data-dismiss="modal">취소(close)</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">삭제</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<form id="deleteForm" method="post" action="/board/delete">
 		<input type="hidden" name="board_id">
 	</form>
