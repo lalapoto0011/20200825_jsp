@@ -16,56 +16,43 @@
 		crossorigin="anonymous">
 		
 	<style>
-		.view-box {
+		.edit-box {
 			margin-top: 100px;
 		}
 	</style>
 
-	<title>게시판 - 보기</title>
+	<title>게시판 - 수정</title>
 </head>
 <body>
 	<div class="container">
 
-		<div class="view-box">
+		<div class="edit-box">
 			<!-- 글 내용 -->
 			<div class="card">
-				<div class="card-header">글 제목입니다.</div>
 				<div class="card-body">
-					<h5 class="card-title">홍길동 2020.08.27 13:10:15</h5>
-					<p class="card-text">
-						글 내용 출력란입니다.<br> 안녕하세요?<br> 글이 출력됩니다.<br> 광광
-					</p>
+					<form name="editForm" method="post" action="/board/edit">
+						<div class="form-group">
+							<label>이름</label> 
+							<input type="text" class="form-control" value="name">
+						</div>
+						<div class="form-group">
+							<label>제목</label> 
+							<input type="password" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>내용</label> 
+							<textarea class="form-control" rows="10">값 넣기.</textarea>
+						</div>
+					</form>
 				</div>
 				<div class="card-footer">
-					<a href="/board/list.jsp" class="btn btn-primary">목록</a>
+					<a href="/board/list.jsp" class="btn btn-primary">뒤로 가기</a>
 					<div class="float-right">
-						<a href="/board.edit.jsp" class="btn btn-warning">수정</a>
-						<button type="button" class="btn btn-danger" data-toggle="modal"
-							data-target="#deleteModal">삭제</button>
+						<button type="button" class="btn btn-warning" id="btnedit">수정</button>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<!-- 댓글 -->
-		<div class="card" style="margin-top:20px;">
-			<div class="card-body">
-				<div>
-					<form>
-						<input type="text" class="form-control">
-					</form>
-				</div>
-			</div>
-			<div class="card-footer">
-				<button type="button" class="btn btn-primary">등록</button>
-				<div class="float-right">
-					<button type="button" class="btn btn-warning">수정</button>
-					<button type="button" class="btn btn-danger">삭제</button>
-				</div>
-			</div>
-		</div>
-
-
 
 	</div>
 
@@ -111,9 +98,8 @@
 		crossorigin="anonymous"></script>
 		
 	<script>
- 		$('#btnDelete').on('click', function() {
-			$('#deleteForm input[name=board_id]').val('abc');
-			$('#deleteForm').submit();
+ 		$('#btnedit').on('click', function() {
+			$('form[name=editForm]').submit();
 		});
 	</script>
 </body>
