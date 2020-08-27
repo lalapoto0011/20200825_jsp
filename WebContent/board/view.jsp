@@ -19,55 +19,85 @@
 		crossorigin="anonymous">
 		
 	<style>
-		.list-box {
+		.view-box {
 			margin-top: 100px;
 		}
 	</style>
 
-	<title>게시판 - 목록</title>
+	<title>게시판 - 보기</title>
 </head>
 <body>
 	<div class="container">
-	
-		<div class="list-box">
-			<table class="table table-hover">
-				<thead class="thead-dark">
-					<tr>
-						<th>번호</th>
-						<th>제목</th>
-						<th>글쓴이</th>
-						<th>작성일시</th>
-					</tr>
-				</thead>
-				<tbody>
-					<%
-						SimpleDateFormat format = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");
-						
-						String name[] = {"홍길동", "최민수", "김영수", "김아름", "박문수"};
-						
-						for(int i = 1; i <= 10; i++) {
-							Random random = new Random();
-							int randomInt = random.nextInt(5);
-							String randomName = name[randomInt];
-							
-							Date now = new Date();
-							String today = format.format(now);
-							String randomTitle = "안녕하세요";
-					%>
-					<tr>
-						<td><%=i %></td>
-						<td><a href="/firstProject/board/view.jsp"><%=randomTitle %></a></td>
-						<td><%=randomName %></td>
-						<td><%=today %></td>
-					</tr>
-					<%
-						}
-					%>
-				</tbody>
-			</table>
+
+		<div class="view-box">
+			<!-- 글 내용 -->
+			<div class="card">
+				<div class="card-header">글 제목입니다.</div>
+				<div class="card-body">
+					<h5 class="card-title">홍길동 2020.08.27 13:10:15</h5>
+					<p class="card-text">
+						글 내용 출력란입니다.<br> 안녕하세요?<br> 글이 출력됩니다.<br> 광광
+					</p>
+				</div>
+				<div class="card-footer">
+					<a href="/board/list.jsp" class="btn btn-primary">목록</a>
+					<div class="float-right">
+						<a href="/board.edit.jsp" class="btn btn-warning">수정</a>
+						<button type="button" class="btn btn-danger" data-toggle="modal"
+							data-target="#deleteModal">삭제</button>
+					</div>
+				</div>
+			</div>
 		</div>
-				
-	</div>	
+
+		<!-- 댓글 -->
+		<div class="card" style="margin-top:20px;">
+			<div class="card-body">
+				<div>
+					<form>
+						<input type="text" class="form-control">
+					</form>
+				</div>
+			</div>
+			<div class="card-footer">
+				<button type="button" class="btn btn-primary">등록</button>
+				<div class="float-right">
+					<button type="button" class="btn btn-warning">수정</button>
+					<button type="button" class="btn btn-danger">삭제</button>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div class="modal" tabindex="-1" id="deleteModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-danger">팝업 제목</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p class="text-danger">삭제된 내용은 복구가 불가능합니다. 정말 삭제할까요?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">취소</button>
+							<button type="button" class="btn btn-danger id=">삭제</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<form id="deleteForm" method="post" action="/board/delete">
+		<input type="hidden" name="board_id">
+	</form>
+	
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -82,5 +112,12 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
 		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
 		crossorigin="anonymous"></script>
+		
+	<script>
+ 		$('#btnDelete').on('click', function() {
+			$('#deleteForm input[name=board_id]').val('abc');
+			$('#deleteForm').submit();
+		});
+	</script>
 </body>
 </html>
