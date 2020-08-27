@@ -16,21 +16,21 @@
 		crossorigin="anonymous">
 		
 	<style>
-		.add-box {
+		.edit-box {
 			margin-top: 100px;
 		}
 	</style>
 
-	<title>게시판 - 등록</title>
+	<title>게시판 - 수정</title>
 </head>
 <body>
 	<div class="container">
 
-		<div class="add-box">
+		<div class="edit-box">
 			<!-- 글 내용 -->
 			<div class="card">
 				<div class="card-body">
-					<form name="addForm" method="post" action="/board/add">
+					<form name="editForm" method="post" action="/board/edit">
 						<div class="form-group">
 							<label>이름</label> 
 							<input type="text" class="form-control" value="name">
@@ -48,7 +48,7 @@
 				<div class="card-footer">
 					<a href="/board/list.jsp" class="btn btn-primary">뒤로 가기</a>
 					<div class="float-right">
-						<button type="button" class="btn btn-success" id="btnAdd">등록</button>
+						<button type="button" class="btn btn-warning" id="btnedit">수정</button>
 					</div>
 				</div>
 			</div>
@@ -98,8 +98,8 @@
 		crossorigin="anonymous"></script>
 		
 	<script>
- 		$('#btnAdd').on('click', function() {
-			$('form[name=addForm]').submit();
+ 		$('#btnedit').on('click', function() {
+			$('form[name=editForm]').submit();
 		});
 	</script>
 </body>
