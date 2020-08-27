@@ -32,21 +32,21 @@
 				<div class="card-body">
 					<form name="addForm" method="post" action="/board/add">
 						<div class="form-group">
-							<label>이름</label> 
-							<input type="text" class="form-control" value="name">
+							<label>Name(글쓴이)</label> 
+							<input type="text" class="form-control" value="이름을 넣어주세요">
 						</div>
 						<div class="form-group">
-							<label>제목</label> 
-							<input type="password" class="form-control">
+							<label>Title(제목)</label> 
+							<input type="text" class="form-control" value="제목을 넣어주세요">
 						</div>
 						<div class="form-group">
-							<label>내용</label> 
-							<textarea class="form-control" rows="10">값 넣기.</textarea>
+							<label>Text(내용)</label> 
+							<textarea class="form-control" rows="10">게시하고 싶은 내용을 적어주세요^^</textarea>
 						</div>
 					</form>
 				</div>
 				<div class="card-footer">
-					<a href="/board/list.jsp" class="btn btn-primary">뒤로 가기</a>
+					<a href="/board/list.jsp" class="btn btn-primary">back(목록)</a>
 					<div class="float-right">
 						<button type="button" class="btn btn-success" id="btnAdd">등록</button>
 					</div>
@@ -75,6 +75,5 @@
 			$('form[name=addForm]').submit();
 		});
 	</script>
-	
 </body>
 </html>
